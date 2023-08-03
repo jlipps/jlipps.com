@@ -9,10 +9,10 @@ export default function Head () {
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Enhance Starter Project</title>
+      <title>Jonathan Lipps</title>
       ${linkTag()}
-      <link rel="icon" href="/_public/favicon.svg">
-      <meta name="description" content="The HTML first full stack web framework.">
+      <link rel="icon" href="/_public/favicon.png">
+      <meta name="description" content="The personal site of Jonathan Lipps: technologist, musician, philosopher, theologian, writer, and linguist.">
     </head>
 `
 }
