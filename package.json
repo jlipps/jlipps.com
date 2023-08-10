@@ -7,8 +7,11 @@
     "enhance": "enhance"
   },
   "devDependencies": {
+    "@architect/sandbox": "^5.7.5-RC.0",
     "@enhance/cli": "latest",
     "@enhance/types": "^0.6.1",
+    "@types/node": "^20.4.6",
+    "ajv": "^8.12.0",
     "eslint": "^8.30.0"
   },
   "eslintConfig": {
@@ -30,6 +33,7 @@
   },
   "dependencies": {
     "@enhance/arc-plugin-enhance": "^6.2.1",
-    "@enhance/styles-cribsheet": "^0.0.9"
+    "@enhance/styles-cribsheet": "^0.0.9",
+    "muaddib": "^0.0.5"
   }
 }

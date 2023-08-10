@@ -1,0 +1,12 @@
+{
+    "include": ["**/*.mjs"],
+    "compilerOptions": {
+        "strict": true,
+        "checkJs": true,
+        "noEmit": true,
+        "moduleResolution": "NodeNext",
+        "module": "ESNext",
+        "target": "ESNext",
+        "types": ["node"]
+    }
+}

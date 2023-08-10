@@ -1,0 +1,83 @@
+.font-title{font-family: Antonio,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;}
+
+.circle {
+  border-radius: 50%;
+}
+
+body {
+  --darkblue: #032e41;
+  --medblue: #5c7696;
+  --navy: #092d3d;
+  --mdgrey: #6f8195;
+
+  height: 100vh;
+  background-color: var(--darkblue);
+  background-image: linear-gradient(180deg, var(--medblue), var(--darkblue));
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--light);
+}
+
+main {
+  min-width: 17rem;
+  max-width: 52rem;
+  height: 100%;
+}
+
+.headshot {
+  max-width: 26rem;
+}
+
+.color-light {
+  color: var(--light);
+}
+
+.color-mdgrey {
+  color: var(--mdgrey);
+}
+
+.color-navy {
+  color: var(--navy);
+}
+
+.border-mdgrey {
+  border-color: var(--mdgrey);
+}
+
+.border-navy {
+  border-color: var(--navy);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.bg-mdgrey {
+  background-color: var(--mdgrey);
+}
+
+.link-btn {
+  height: 4rem;
+}
+
+.discord-logo {
+  width: 1.75rem;
+}
+
+.radius5 {
+  border-radius: 5px;
+}
+
+
+@media only screen and (min-width:48em) {
+  :host > main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 50rem;
+    grid-column: 1 / 6;
+  }
+}
+
