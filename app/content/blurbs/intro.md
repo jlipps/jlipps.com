@@ -1,6 +1,6 @@
 ---
 id: intro
-image: headshot.jpg
+image: intro.jpg
 addedAt: '2023-08-10 15:17:23'
 ---
 

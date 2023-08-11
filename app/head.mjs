@@ -3,14 +3,18 @@ import { getStyles }  from '@enhance/arc-plugin-styles'
 
 const { linkTag } = getStyles
 
-export default function Head () {
+/** @type {import('@enhance/types').EnhanceHeadFn} */
+export default function Head(state) {
+  const {store} = state
+  const {title} = store
+  const titleExtra = title ? `: ${title}` : ''
   return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Jonathan Lipps</title>
+      <title>Jonathan Lipps${titleExtra}</title>
       ${linkTag()}
       <link rel="stylesheet" href="${staticStyle('main.css')}" />
       <link rel="preconnect" href="https://fonts.googleapis.com">

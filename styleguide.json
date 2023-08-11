@@ -20,10 +20,11 @@
   "fonts": {
     "sans": "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif",
     "serif": "Georgia,Cambria,Times New Roman,Times,serif",
-    "mono": "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
+    "mono": "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+    "title": "Antonio,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
   },
   "theme": {
-    "light": "#f8f9fa",
+    "light": "#e0e0e0",
     "dark": "#343a40",
     "primary": "#007bff",
     "secondary": "#6c757d",
@@ -33,12 +34,16 @@
     "error": "#dc3545"
   },
   "color": {
-    "crimson": "#eb0052",
     "muted": "#6c757d",
-    "white": "#fff"
+    "white": "#fff",
+    "navy": "#092d3d",
+    "darkblue": "#033449",
+    "medblue": "#7390B4",
+    "mdgrey": "#6f8195"
   },
   "properties": {
-    "gradient": "linear-gradient(var(--primary), var(--secondary))"
+    "gradient": "linear-gradient(var(--primary), var(--secondary))",
+    "font-title": "Antonio,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
   },
   "grid": {
     "steps": 6
