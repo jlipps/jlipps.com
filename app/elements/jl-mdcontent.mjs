@@ -14,8 +14,16 @@ export default function JLMDContent({html}) {
       }
 
       p {
-        padding-block-start: var(--space--2);
-        padding-block-end: var(--space--2);
+        margin-block-start: var(--space--1);
+        margin-block-end: var(--space--1);
+      }
+
+      section > p:first-child {
+        margin-block-start: 0;
+      }
+
+      section > p:last-child {
+        margin-block-end: 0;
       }
 
       ul {

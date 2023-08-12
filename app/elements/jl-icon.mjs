@@ -46,7 +46,8 @@ export default function JLIcon({html, state}) {
   return html`
     <style>
       img, svg {
-        display: inline;
+        display: inline-block;
+        height: var(--text-${size});
         width: var(--text-${size});
       }
     </style>

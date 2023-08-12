@@ -43,7 +43,8 @@
   },
   "properties": {
     "gradient": "linear-gradient(var(--primary), var(--secondary))",
-    "font-title": "Antonio,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
+    "font-title": "Antonio,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif",
+    "lg-step": "48em"
   },
   "grid": {
     "steps": 6
