@@ -1,7 +1,7 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function aboutPage({html, state}) {
   const {store} = state
-  const {about, bio, delights} = store
+  const {about, bio, profBio, delights} = store
   return html`
     <jl-layout hero="${about.image}">
       <jl-socials></jl-socials>
@@ -14,6 +14,8 @@ export default function aboutPage({html, state}) {
         <h2>${delights.title}</h2>
         <img class="sectionHero" src="${delights.image}" />
         ${delights._html}
+        <a name="professional-bio"></a><h2>${profBio.title}</h2>
+        ${profBio._html}
       </jl-mdcontent>
     </jl-layout>
   `

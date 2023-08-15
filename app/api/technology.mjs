@@ -13,5 +13,18 @@ export async function get(/*req*/) {
     href: 'https://linkedin.com/in/jlipps',
     openNew: true,
   }]
-  return {json: {title: 'Technology', blurb: await getBlurb('technology'), buttons}}
+  const blurb = await getBlurb('technology')
+  const highlightsBlurb = await getBlurb('tech-highlights')
+  const speakingBlurb = await getBlurb('tech-speaking')
+  const philosophyBlurb = await getBlurb('tech-philosophy')
+  return {
+    json: {
+      title: 'Technology',
+      blurb,
+      highlightsBlurb,
+      speakingBlurb,
+      philosophyBlurb,
+      buttons
+    }
+  }
 }

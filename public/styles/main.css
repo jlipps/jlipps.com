@@ -23,7 +23,7 @@ a:hover {
   border-color: var(--navy);
   border-width: 2px;
   border-radius: 100%;
-  max-width: 8rem;
+  max-width: 6rem;
   display: block;
   margin-block: var(--space--2);
   float: right;
@@ -32,7 +32,7 @@ a:hover {
 
 @media only screen and (min-width:48em) {
   .sectionHero {
-    max-width: 12rem;
+    max-width: 10rem;
   }
 }
 
@@ -70,4 +70,8 @@ a:hover {
 
 .radius5 {
   border-radius: 5px;
+}
+
+.clear {
+  clear: both;
 }
