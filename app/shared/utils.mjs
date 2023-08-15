@@ -20,3 +20,11 @@ export function staticStyle(style) {
 export function staticFile(file) {
   return arc.static(file)
 }
+
+/** @typedef {{
+ *    href: string,
+ *    title: string,
+ *    openNew?: boolean,
+ *    isPrimary?: boolean,
+ *  }} Button
+*/

@@ -5,5 +5,22 @@ export async function get(/*req*/) {
   const about = await getBlurb('about')
   const bio = await getBlurb('about-bio')
   const delights = await getBlurb('about-delights')
-  return {json: {title: 'About', about, bio, delights}}
+  /** @type {Button[]} */
+  const buttons = [{
+    title: 'Professional Bio',
+    href: '#professional-bio',
+  }, {
+    title: 'Résumé',
+    href: '/downloads/Jonathan-Lipps-CV.pdf'
+  }, {
+    title: 'Headshot',
+    href: 'todo'
+  }, {
+    title: 'Blog',
+    href: 'https://jlipps.com',
+    openNew: true,
+  }]
+  return {json: {title: 'About', about, bio, delights, buttons}}
 }
+
+/** @typedef {import('../shared/utils.mjs').Button} Button */
