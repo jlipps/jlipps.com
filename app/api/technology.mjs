@@ -1,5 +1,6 @@
-import { getBlurb } from '../shared/content.mjs'
-import { staticFile } from '../shared/utils.mjs'
+import { getBlurb, getProjectsByType } from '../shared/content.mjs'
+import { compareStartedFinished, prettyYearMonth, compareDate, prettyDate,
+  staticFile } from '../shared/utils.mjs'
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
 export async function get(/*req*/) {
@@ -17,6 +18,16 @@ export async function get(/*req*/) {
   const highlightsBlurb = await getBlurb('tech-highlights')
   const speakingBlurb = await getBlurb('tech-speaking')
   const philosophyBlurb = await getBlurb('tech-philosophy')
+  const highlights = (await getProjectsByType('job')).sort(compareStartedFinished).reverse().map((h) => {
+    return {
+      ...h,
+      _startedAtText: prettyYearMonth(h._startedAt),
+      _finishedAtText: prettyYearMonth(h._finishedAt) || 'now',
+    }
+  })
+  const talks = (await getProjectsByType('talk')).sort(compareDate).reverse().map((t) => {
+    return {...t, _dateText: prettyDate(t._date)}
+  })
   return {
     json: {
       title: 'Technology',
@@ -24,7 +35,9 @@ export async function get(/*req*/) {
       highlightsBlurb,
       speakingBlurb,
       philosophyBlurb,
-      buttons
+      highlights,
+      talks,
+      buttons,
     }
   }
 }

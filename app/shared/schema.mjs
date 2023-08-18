@@ -20,19 +20,30 @@ export const BLURB = 'blurb'
 
 /**
  * @typedef {Blurb & {
+ *   type: string,
  *   link?: string,
  *   links?: Record<string, string>,
+ *   startedAt?: string,
+ *   finishedAt?: string,
+ *   role?: string,
+ *   event?: string,
+ *   location?: string,
  *   date?: string,
  * }} Project
  */
 
 const projectProps = /** @type const */({
   ...blurbProperties,
+  type: {type: 'string'},
   link: {type: 'string', nullable: true},
   links: {type: 'object', propertyNames: {type: 'string'}, required: [], nullable: true},
-  date: {type: 'string', nullable: true},
+  date: {type: 'string', nullable: true, format: 'date'},
+  event: {type: 'string', nullable: true},
+  location: {type: 'string', nullable: true},
+  startedAt: {type: 'string', nullable: true, format: 'date'},
+  finishedAt: {type: 'string', nullable: true, format: 'date'},
+  role: {type: 'string', nullable: true},
 })
-
 
 /**
  * @type {JSONSchemaType<Project>}
@@ -43,24 +54,6 @@ export const projectSchema = {
   required: [],
 }
 export const PROJECT = 'project'
-
-/**
- * @typedef {Project & {
- *   isCurrent?: boolean
- * }} TechProject
- */
-/**
- * @type {JSONSchemaType<TechProject>}
- */
-export const techProjectSchema = {
-  type: 'object',
-  properties: {
-    ...projectProps,
-    isCurrent: {type: 'boolean', nullable: true},
-  },
-  required: [],
-}
-export const TECH_PROJECT = 'techproject'
 
 /**
  * @template T

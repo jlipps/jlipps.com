@@ -75,3 +75,11 @@ a:hover {
 .clear {
   clear: both;
 }
+
+.tag {
+  background-color: var(--navy);
+  padding: 3px;
+  border: 1px solid var(--lightnavy);
+  border-radius: 5px;
+  display: inline-block;
+}

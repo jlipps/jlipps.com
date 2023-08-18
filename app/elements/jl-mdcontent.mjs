@@ -13,6 +13,11 @@ export default function JLMDContent({html}) {
         font-size: var(--text-2);
       }
 
+      h3 {
+        font-size: var(--text-1);
+        font-style: normal;
+      }
+
       p {
         margin-block-start: var(--space--1);
         margin-block-end: var(--space--1);

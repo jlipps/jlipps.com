@@ -2,7 +2,7 @@ import {dirname, resolve} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import MarkdownDB from 'muaddib';
 import {staticFile} from './utils.mjs';
-import { BLURB, blurbSchema, PROJECT, projectSchema, TECH_PROJECT, techProjectSchema } from './schema.mjs';
+import { BLURB, blurbSchema, PROJECT, projectSchema } from './schema.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const contentDir = resolve(__dirname, '..', 'content')
@@ -10,18 +10,69 @@ export const db = new MarkdownDB({baseDir: contentDir})
 
 db.addObjectType(BLURB, blurbSchema)
 db.addObjectType(PROJECT, projectSchema, {dirName: 'projects'})
-db.addObjectType(TECH_PROJECT, techProjectSchema)
 
 /**
- * @param {string} name
+ * @param {string} id
  */
-export async function getBlurb(name) {
-  /** @type {import('muaddib').ParsedObject<Blurb>} */
-  const blurb = await db.findById(BLURB, name)
+export async function getBlurb(id) {
+  /** @type {ParsedObject<Blurb>} */
+  const blurb = await db.findById(BLURB, id)
   if (blurb.image) {
     blurb.image = staticFile(`content/blurbs/${blurb.image}`)
   }
   return blurb
 }
 
+/**
+ * @typedef {'date'|'addedAt'|'startedAt'|'finishedAt'} DateKey
+ */
+
+/**
+ * @template T
+ * @typedef {T & {
+ *   _date?: Date,
+ *   _addedAt?: Date,
+ *   _startedAt?: Date,
+ *   _finishedAt?: Date,
+ * }} DecoratedItem<T>
+ */
+
+/**
+ * @param {DecoratedItem<Project>} item
+ * @param {string} path
+ */
+function decorateProject(item, path) {
+  if (item.image) {
+    item.image = staticFile(`content/${path}/${item.image}`)
+  }
+  for (const dateKey of /** @type {DateKey[]} */(['date', 'addedAt', 'startedAt', 'finishedAt'])) {
+    if (item[dateKey]) {
+      item[`_${dateKey}`] = new Date(/** @type {string} */(item[dateKey]))
+    }
+  }
+  return item
+}
+
+/**
+ * @param {string} id
+ */
+export async function getProject(id) {
+  /** @type {ParsedObject<Project>} */
+  const p = await db.findById(PROJECT, id)
+  return decorateProject(p, 'projects')
+}
+
+/**
+ * @param {string} type
+ */
+export async function getProjectsByType(type) {
+  /** @type {ParsedObject<Project>} */
+  return (await db.find(PROJECT, {type})).map(p => decorateProject(p, 'projects'))
+}
+
+/**
+ * @template T
+ * @typedef {import('muaddib').ParsedObject<T>} ParsedObject
+ */
 /** @typedef {import('./schema.mjs').Blurb} Blurb */
+/** @typedef {import('./schema.mjs').Project} Project */
