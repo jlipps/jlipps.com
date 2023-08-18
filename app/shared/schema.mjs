@@ -28,7 +28,9 @@ export const BLURB = 'blurb'
  *   role?: string,
  *   event?: string,
  *   location?: string,
+ *   publication?: string,
  *   date?: string,
+ *   tags?: string[],
  * }} Project
  */
 
@@ -40,6 +42,7 @@ const projectProps = /** @type const */({
   date: {type: 'string', nullable: true, format: 'date'},
   event: {type: 'string', nullable: true},
   location: {type: 'string', nullable: true},
+  tags: {type: 'array', items: {type: 'string'}, nullable: true},
   startedAt: {type: 'string', nullable: true, format: 'date'},
   finishedAt: {type: 'string', nullable: true, format: 'date'},
   role: {type: 'string', nullable: true},

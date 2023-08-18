@@ -11,12 +11,20 @@ body {
 }
 
 a, a:active, a:visited {
-  color: var(--white);
-  font-weight: 500;
+  color: var(--lightblue);
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+h1 a, h1 a:active, h1 a:visited,
+h2 a, h2 a:active, h2 a:visited,
+h3 a, h3 a:active, h3 a:visited,
+h4 a, h4 a:active, h4 a:visited {
+  color: inherit;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 .sectionHero {
@@ -70,6 +78,14 @@ a:hover {
 
 .radius5 {
   border-radius: 5px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
 
 .clear {

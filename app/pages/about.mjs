@@ -1,7 +1,22 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function aboutPage({html, state}) {
-  const {store} = state
+  const {store, context} = state
   const {about, bio, profBio, delights} = store
+  /** @type {import('../shared/utils.mjs').Button[]} */
+  context.buttons = [{
+    title: 'Professional Bio',
+    href: '#professional-bio',
+  }, {
+    title: 'Résumé',
+    href: '/downloads/Jonathan-Lipps-CV.pdf'
+  }, {
+    title: 'Headshot',
+    href: 'todo'
+  }, {
+    title: 'Blog',
+    href: 'https://jlipps.com',
+    openNew: true,
+  }]
   return html`
     <jl-layout hero="${about.image}">
       <jl-socials></jl-socials>

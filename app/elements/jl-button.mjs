@@ -4,6 +4,12 @@ export default function JLButton({html, state}) {
   const {href, target, primary} = attrs
   const targetExtra = target ? `target="${target}"` : ''
   return html`
+    <style>
+      a, a:active, a:visited {
+        color: var(--white);
+        text-decoration: none;
+      }
+    </style>
     <a
       href="${href}"
       ${targetExtra}

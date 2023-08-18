@@ -3,7 +3,7 @@ export default function JLProject({html, state}) {
   const {context, attrs} = state
   /** @type {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project} */
   const project = context[attrs.contextkey]
-  const wrapWithLink = (/** @type {any} */wrapped) => project.link ? html`<a href="${project.link}">${wrapped}</a>`: ''
+  const wrapWithLink = (/** @type {any} */wrapped) => project.link ? html`<a href="${project.link}" target="_blank">${wrapped}</a>`: ''
   const titleHtml = wrapWithLink(project.title)
   const imgHtml = wrapWithLink(project.image ?
     html`
@@ -25,27 +25,43 @@ export default function JLProject({html, state}) {
         ${imgHtml}
         <div>
           <div class="text-1"><strong>${project.role ?? ''}</strong></div>
-          <div class="text-1"><span class="tag">${project._startedAtText}</span> to <span class="tag">${project._finishedAtText}</span></div>
+          <div class="text-1"><span class="tag inline-tag">${project._startedAtText}</span> to <span class="tag">${project._finishedAtText}</span></div>
         </div>
       </div>
       <div>${project._html}</div>
     `
   }
 
-  if (project.type === 'talk') {
-    let vidLink = project?.links?.video
-    const slideLink = project?.links?.slides
+  if (['talk', 'article'].includes(project.type)) {
+    let vidLink = project.links?.video
+    const slideLink = project.links?.slides
     if (vidLink === '') {
       vidLink = project.link
     }
-    const vidLinkHtml = vidLink ? html`<jl-icon name="video" href="${vidLink}" alt="Video"></jl-icon>` : ''
-    const slideLinkHtml = slideLink ? html`<jl-icon name="slides" href="${slideLink}" alt="Slides"></jl-icon>` : ''
-    const vidSlidesHtml = (vidLinkHtml || slideLinkHtml) ? `${vidLinkHtml}${slideLinkHtml}` : ''
+
+    let audioLink = project.links?.audio
+    if (audioLink === '') {
+      audioLink = project.link
+    }
+
+    let articleLink = project.links?.article
+    if (articleLink === '') {
+      articleLink = project.link
+    }
+    const vidLinkHtml = vidLink ? html`<jl-icon name="video" href="${vidLink}" target="_blank" alt="Video"></jl-icon>` : ''
+    const audioLinkHtml = audioLink ? html`<jl-icon name="mic" href="${audioLink}" target="_blank" alt="Audio"></jl-icon>` : ''
+    const slideLinkHtml = slideLink ? html`<jl-icon name="slides" href="${slideLink}" target="_blank" alt="Slides"></jl-icon>` : ''
+    const articleLinkHtml = articleLink ? html`<jl-icon name="file" href="${articleLink}" target="_blank" alt="Article"></jl-icon>` : ''
+    const mediaIcons = `${vidLinkHtml}${audioLinkHtml}${slideLinkHtml}${articleLinkHtml}`
+    const imgHtml = project.image ? `<img class="projectHeroImg radius5" src="${project.image}" />` : ''
+    const eventHtml = project.event ? html`<span class="tag">${project.event}</span>` : ''
+    const publicationHtml = project.publication ? html`<span class="tag">${project.publication}</span>` : ''
+    const locationHtml = project.location ? html`<span class="tag">${project.location}</span>` : ''
 
     return html`
       <style>
         jl-icon svg {
-          fill: var(--white);
+          fill: var(--lightblue);
           height: 1.5rem;
           width: 1.5rem;
           margin-inline-end: 0.5rem;
@@ -54,15 +70,42 @@ export default function JLProject({html, state}) {
           margin-inline-end: 0.5rem;
           margin-block-end: 0.25rem;
         }
+        .tag.inline-tag {
+          margin-inline-end: 0;
+        }
+        .projectHeroImg {
+          flex: 0 0 100%;
+          align-self: flex-start;
+          margin-block-start: var(--space--1);
+        }
+
+        .projectText {
+        }
+
+        @media only screen and (min-width:48em) {
+          .projectHeroImg {
+            width: calc(25% - var(--space--1));
+            flex: 1 1 calc(25% - var(--space--1));
+            margin-inline-end: var(--space--1);
+            margin-block-start: calc(var(--space--1) + 0.25rem);
+          }
+          .projectText {
+            flex: 1 1 75%;
+          }
+        }
       </style>
-      <h3>${titleHtml}</h3>
+      <h4>${titleHtml}</h4>
       <div class="text-1 flex align-items-center flex-wrap">
-        ${vidSlidesHtml}
-        <span class="tag">${project.event}</span>
+        ${mediaIcons}
+        ${eventHtml}
+        ${publicationHtml}
         <span class="tag">${project._dateText}</span>
-        <span class="tag">${project.location}</span>
+        ${locationHtml}
       </div>
-      <div>${project._html}</div>
+      <div class="flex flex-row flex-wrap align-items-top justify-content-start align-self-center">
+        ${imgHtml}
+        <div class="projectText">${project._html}</div>
+      </div>
     `
   }
 

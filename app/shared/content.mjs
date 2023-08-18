@@ -71,6 +71,33 @@ export async function getProjectsByType(type) {
 }
 
 /**
+ * @param {Record<string, any>} requirements
+ */
+export async function getProjectsBy(requirements) {
+  /** @type {string[]} */
+  let tags = []
+
+  // handle tags specially
+  if (requirements.tags) {
+    tags = requirements.tags
+    delete requirements.tags
+  }
+
+  /** @type {ParsedObject<Project>[]} */
+  const projects = await db.find(PROJECT, requirements)
+  return projects
+    .filter(p => {
+      for (const tag of tags) {
+        if (!p.tags || !p.tags.map(s => s.toLowerCase()).includes(tag.toLowerCase())) {
+          return false
+        }
+      }
+      return true
+    })
+    .map(p => decorateProject(p, 'projects'))
+}
+
+/**
  * @template T
  * @typedef {import('muaddib').ParsedObject<T>} ParsedObject
  */

@@ -2,7 +2,7 @@
 id: talk-scotlandjs
 title: Yield! How ES6 Generators and Monocle-js Can Bring Async Into Line, Literally
 type: talk
-event: ScotlandJS 2014
+event: ScotlandJS
 location: Edinburgh, Scotland
 link: http://vimeo.com/96425438
 links:
