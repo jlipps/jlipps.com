@@ -77,6 +77,16 @@ export function prettyDate(date) {
   return date ? mdyFormatter.format(date) : ''
 }
 
+/** @param {import('../shared/content.mjs').DecoratedItem<import('../shared/schema.mjs').Project>} project */
+export function prettifyProjectDates(project) {
+  return {
+    ...project,
+    _dateText: project._date ? prettyDate(project._date) : undefined,
+    _startedAtText: project._startedAt? prettyYearMonth(project._startedAt) : undefined,
+    _finishedAtText: project._finishedAt ? prettyYearMonth(project._finishedAt) : 'now',
+  }
+}
+
 /** @typedef {{
  *    href: string,
  *    title: string,

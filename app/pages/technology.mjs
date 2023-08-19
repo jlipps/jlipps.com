@@ -66,20 +66,23 @@ export default function aboutPage({html, state}) {
           <a name="highlights"></a><h2>${highlightsBlurb.title}</h2>
           <img class="sectionHero" src="${highlightsBlurb.image}" />
           ${highlightsBlurb._html}
+          <div class="clear"></div>
           ${highlightsHtml}
         </div>
 
-        <div class="clear">
+        <div>
           <a name="speaking"></a><h2>${speakingBlurb.title}</h2>
           <img class="sectionHero" src="${speakingBlurb.image}" />
           ${speakingBlurb._html}
+          <div class="clear"></div>
           ${talksHtml}
         </div>
 
-        <div class="clear">
+        <div>
           <a name="philosophy"></a><h2>${philosophyBlurb.title}</h2>
           <img class="sectionHero" src="${philosophyBlurb.image}" />
           ${philosophyBlurb._html}
+          <div class="clear"></div>
           ${articlesHtml}
         </div>
 

@@ -1,15 +1,6 @@
 import { getBlurb, getProjectsBy, getProjectsByType } from '../shared/content.mjs'
-import { compareStartedFinished, prettyYearMonth, compareDate, prettyDate } from '../shared/utils.mjs'
+import { compareStartedFinished, prettifyProjectDates, compareDate } from '../shared/utils.mjs'
 
-/** @param {import('../shared/content.mjs').DecoratedItem<import('../shared/schema.mjs').Project>} project */
-function prettifyDate(project) {
-  return {
-    ...project,
-    _dateText: project._date ? prettyDate(project._date) : undefined,
-    _startedAtText: project._startedAt? prettyYearMonth(project._startedAt) : undefined,
-    _finishedAtText: project._finishedAt ? prettyYearMonth(project._finishedAt) : 'now',
-  }
-}
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
 export async function get(/*req*/) {
@@ -20,15 +11,15 @@ export async function get(/*req*/) {
   const highlights = (await getProjectsByType('job'))
     .sort(compareStartedFinished)
     .reverse()
-    .map(prettifyDate)
+    .map(prettifyProjectDates)
   const talks = (await getProjectsByType('talk'))
     .sort(compareDate)
     .reverse()
-    .map(prettifyDate)
+    .map(prettifyProjectDates)
   const articles = (await getProjectsBy({type: 'article', tags: ['technology', 'philosophy']}))
     .sort(compareDate)
     .reverse()
-    .map(prettifyDate)
+    .map(prettifyProjectDates)
   return {
     json: {
       title: 'Technology',

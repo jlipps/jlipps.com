@@ -1,12 +1,21 @@
-import { BLURB, db } from '../shared/content.mjs'
+import { getBlurb, getProjectsByType } from '../shared/content.mjs'
+import {compareDate, prettifyProjectDates} from '../shared/utils.mjs'
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
 export async function get(/*req*/) {
-  /**
-   * @type {import('muaddib').ParsedObject<Blurb>}
-   */
-  const blurb = await db.findById(BLURB, 'music')
-  return {json: {blurb}}
+  const blurb = await getBlurb('music')
+  const projectsBlurb = await getBlurb('music-projects')
+  const projects = [
+    ...(await getProjectsByType('musicvideo')),
+    ...(await getProjectsByType('song')),
+    ...(await getProjectsByType('album')),
+  ].sort(compareDate).reverse().map(prettifyProjectDates)
+  return {
+    json: {
+      title: 'Music',
+      blurb,
+      projectsBlurb,
+      projects,
+    }
+  }
 }
-
-/** @typedef {import('../shared/content.mjs').Blurb} Blurb */

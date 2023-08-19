@@ -32,7 +32,8 @@ export default function JLProject({html, state}) {
     `
   }
 
-  if (['talk', 'article'].includes(project.type)) {
+  if (['talk', 'article', 'musicvideo', 'song', 'album'].includes(project.type)) {
+    const specialLinks = ['video', 'slides', 'audio', 'article']
     let vidLink = project.links?.video
     const slideLink = project.links?.slides
     if (vidLink === '') {
@@ -52,6 +53,17 @@ export default function JLProject({html, state}) {
     const audioLinkHtml = audioLink ? html`<jl-icon name="mic" href="${audioLink}" target="_blank" alt="Audio"></jl-icon>` : ''
     const slideLinkHtml = slideLink ? html`<jl-icon name="slides" href="${slideLink}" target="_blank" alt="Slides"></jl-icon>` : ''
     const articleLinkHtml = articleLink ? html`<jl-icon name="file" href="${articleLink}" target="_blank" alt="Article"></jl-icon>` : ''
+
+    const otherLinkHtml = project.links ?
+      Object.keys(project.links)
+        .filter((linkName) => !specialLinks.includes(linkName))
+        .map((linkName) => {
+          return html`
+            <span class="tag">
+              <a href="${project.links[linkName]}" target="_blank">${linkName}</a>
+            </span>`
+        }).join('\n')
+      : ''
     const mediaIcons = `${vidLinkHtml}${audioLinkHtml}${slideLinkHtml}${articleLinkHtml}`
     const imgHtml = project.image ? `<img class="projectHeroImg radius5" src="${project.image}" />` : ''
     const eventHtml = project.event ? html`<span class="tag">${project.event}</span>` : ''
@@ -60,6 +72,10 @@ export default function JLProject({html, state}) {
 
     return html`
       <style>
+        :host {
+          --hero-width: 28%;
+        }
+
         jl-icon svg {
           fill: var(--lightblue);
           height: 1.5rem;
@@ -82,25 +98,28 @@ export default function JLProject({html, state}) {
         .projectText {
         }
 
-        @media only screen and (min-width:48em) {
+        @media only screen and (min-width:44em) {
           .projectHeroImg {
-            width: calc(25% - var(--space--1));
-            flex: 1 1 calc(25% - var(--space--1));
+            width: calc(var(--hero-width) - var(--space--1));
+            flex: 1 1 calc(var(--hero-width) - var(--space--1));
             margin-inline-end: var(--space--1);
             margin-block-start: calc(var(--space--1) + 0.25rem);
           }
           .projectText {
-            flex: 1 1 75%;
+            flex: 1 1 calc(100% - var(--hero-width));
           }
         }
       </style>
+
       <h4>${titleHtml}</h4>
+
       <div class="text-1 flex align-items-center flex-wrap">
         ${mediaIcons}
         ${eventHtml}
         ${publicationHtml}
         <span class="tag">${project._dateText}</span>
         ${locationHtml}
+        ${otherLinkHtml}
       </div>
       <div class="flex flex-row flex-wrap align-items-top justify-content-start align-self-center">
         ${imgHtml}

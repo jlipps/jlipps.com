@@ -10,3 +10,6 @@ links:
     slides: https://speakerdeck.com/jlipps/appium-automation-for-mobile-apps
 date: '2013-04-23'
 ---
+
+This was Appium's formal debut on the world stage (not counting the demo of an early incarnation
+of the idea that became Appium, which was demoed at SeleniumConf 2012).
