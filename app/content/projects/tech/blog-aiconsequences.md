@@ -6,6 +6,7 @@ image: tech/blog-aiconsequences.jpg
 tags:
     - technology
     - philosophy
+    - theology
 publication: Blog
 link: https://blog.jlipps.com/2023/04/the-consequences-of-ai-for-human-personhood-and-creativity/
 links:

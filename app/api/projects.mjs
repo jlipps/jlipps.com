@@ -6,14 +6,13 @@ import { prettifyProjectDates, compareDate } from '../shared/utils.mjs'
 export async function get(/*req*/) {
   const blurb = await getBlurb('projects')
   const projects = (await getProjectsBy({}))
-    .filter((p) => p.type !== 'job')
     .sort(compareDate)
     .reverse()
     .map(prettifyProjectDates)
   /** @type {Record<string, Array<Project>>} */
   const projectsByYear = {}
   for (const p of projects) {
-    const year = p._date?.getFullYear().toString()
+    const year = p._date?.getFullYear().toString() ?? p._startedAt?.getFullYear().toString()
     if (!year) {
       throw new Error(`Project ${p.title} has no date`)
     }

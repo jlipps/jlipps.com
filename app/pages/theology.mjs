@@ -1,10 +1,9 @@
-
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function aboutPage({html, state}) {
   const {store, context} = state
   const {
     blurb,
-    stanfordBlurb,
+    backgroundBlurb,
     worksBlurb,
     works,
   } = store
@@ -22,15 +21,12 @@ export default function aboutPage({html, state}) {
 
       <jl-mdcontent>
 
-        <a name="stanford"></a><h2>${stanfordBlurb.title}</h2>
-        <img class="sectionHero" src="${stanfordBlurb.image}" />
-        ${stanfordBlurb._html}
+        <a name="background"></a><h2>${backgroundBlurb.title}</h2>
+        <img class="sectionHero" src="${backgroundBlurb.image}" />
+        ${backgroundBlurb._html}
         <div class="clear"></div>
 
         <a name="works"></a><h2>${worksBlurb.title}</h2>
-        <img class="sectionHero" src="${worksBlurb.image}" />
-        ${worksBlurb._html}
-        <div class="clear"></div>
         ${worksHtml}
 
       </jl-mdcontent>

@@ -32,11 +32,11 @@ export default function JLProject({html, state}) {
     `
   }
 
-  if (['talk', 'article', 'musicvideo', 'song', 'album'].includes(project.type)) {
+  if (['talk', 'article', 'musicvideo', 'song', 'album', 'podepisode'].includes(project.type)) {
     if (project.artist) {
       titleHtml = `${titleHtml} <span class="color-muted">by ${project.artist}</span>`
     }
-    const specialLinks = ['video', 'slides', 'audio', 'article']
+    const specialLinks = ['video', 'slides', 'audio', 'article', 'podepisode']
     let vidLink = project.links?.video
     const slideLink = project.links?.slides
     if (vidLink === '') {
