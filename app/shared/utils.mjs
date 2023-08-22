@@ -37,10 +37,29 @@ export function staticFile(file) {
  * @param {import('./content.mjs').DecoratedItem<import('./schema.mjs').Project>} b
  */
 export function compareDate(a, b) {
-  if (!a._date || !b._date) {
-    throw new Error(`Need a date to compare these projects`)
+  if (a._date && b._date) {
+    return a._date < b._date ? -1 : 1
   }
-  return a._date < b._date ? -1 : 1
+  if ((a._date && (b._finishedAt || b._startedAt)) ||
+      (b._date && (a._finishedAt || a._startedAt))) {
+    // we have a mix of punctiliar date and span date
+    if (a._date) {
+      // a is punctiliar and b is span
+      if (b._finishedAt) {
+        return a._date < b._finishedAt ? - 1 : 1
+      }
+      return -1
+    } else if (b._date) {
+      if (a._finishedAt) {
+        return a._finishedAt < b._date ? -1 : 1
+      }
+      return 1
+    }
+  }
+  if (!a._startedAt || !b._startedAt) {
+    throw new Error(`Need a date or startedAt to compare these projects`)
+  }
+  return compareStartedFinished(a, b);
 }
 
 /**

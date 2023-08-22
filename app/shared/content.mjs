@@ -50,6 +50,7 @@ function decorateProject(item, path) {
       item[`_${dateKey}`] = new Date(/** @type {string} */(item[dateKey]))
     }
   }
+
   return item
 }
 
