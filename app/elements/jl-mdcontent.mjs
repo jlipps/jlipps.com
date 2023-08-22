@@ -34,7 +34,7 @@ export default function JLMDContent({html}) {
         margin-block-end: 0;
       }
 
-      ul {
+      ul, ol {
         margin-inline-start: 1rem;
       }
 

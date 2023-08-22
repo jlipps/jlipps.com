@@ -1,6 +1,7 @@
 ---
 id: song-ontheotherside
 title: On the Other Side
+artist: Jonathan Lipps
 image: music/song-ontheotherside.png
 type: musicvideo
 link: https://www.instagram.com/p/CuQvKlkOLg3/

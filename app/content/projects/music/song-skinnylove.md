@@ -1,5 +1,6 @@
 ---
 id: song-skinnylove
+artist: Jonathan Lipps
 title: Skinny Love (Bon Iver Cover)
 image: music/song-skinnylove.png
 type: musicvideo

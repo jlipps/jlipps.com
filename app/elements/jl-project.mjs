@@ -3,8 +3,8 @@ export default function JLProject({html, state}) {
   const {context, attrs} = state
   /** @type {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project} */
   const project = context[attrs.contextkey]
-  const wrapWithLink = (/** @type {any} */wrapped) => project.link ? html`<a href="${project.link}" target="_blank">${wrapped}</a>`: ''
-  const titleHtml = wrapWithLink(project.title)
+  const wrapWithLink = (/** @type {any} */wrapped) => project.link ? html`<a href="${project.link}" target="_blank">${wrapped}</a>`: wrapped
+  let titleHtml = wrapWithLink(project.title)
   const imgHtml = wrapWithLink(project.image ?
     html`
       <style>
@@ -33,6 +33,9 @@ export default function JLProject({html, state}) {
   }
 
   if (['talk', 'article', 'musicvideo', 'song', 'album'].includes(project.type)) {
+    if (project.artist) {
+      titleHtml = `${titleHtml} <span class="color-muted">by ${project.artist}</span>`
+    }
     const specialLinks = ['video', 'slides', 'audio', 'article']
     let vidLink = project.links?.video
     const slideLink = project.links?.slides
@@ -90,8 +93,10 @@ export default function JLProject({html, state}) {
           margin-inline-end: 0;
         }
         .projectHeroImg {
+          width: 100%;
           flex: 0 0 100%;
           align-self: flex-start;
+          margin-inline: auto;
           margin-block-start: var(--space--1);
         }
 
