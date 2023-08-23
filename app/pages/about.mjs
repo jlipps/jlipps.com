@@ -1,3 +1,5 @@
+import { staticFile } from '../shared/utils.mjs'
+
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function aboutPage({html, state}) {
   const {store, context} = state
@@ -8,7 +10,7 @@ export default function aboutPage({html, state}) {
     href: '#professional-bio',
   }, {
     title: 'Résumé',
-    href: '/downloads/Jonathan-Lipps-CV.pdf'
+    href: staticFile('downloads/Jonathan-Lipps-CV.pdf'),
   }, {
     title: 'Headshot',
     href: 'todo'
