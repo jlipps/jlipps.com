@@ -36,9 +36,9 @@ export default function indexPage({html, state}) {
 
     <jl-layout hero="${intro.image}">
       <jl-socials></jl-socials>
-      <section class="p2 mbe2 text0 bg-navy radius5 font-light italic">
+      <!--<section class="p2 mbe2 text0 bg-navy radius5 font-light italic">
         ${intro._html}
-      </section>
+      </section>-->
       <div class="grid gap1 col-2">
         ${aboutLinksHtml}
         ${linksHtml}
