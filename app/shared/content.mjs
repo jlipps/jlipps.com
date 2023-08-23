@@ -17,8 +17,11 @@ db.addObjectType(PROJECT, projectSchema, {dirName: 'projects'})
 export async function getBlurb(id) {
   /** @type {ParsedObject<Blurb>} */
   const blurb = await db.findById(BLURB, id)
-  if (blurb.image) {
-    blurb.image = staticFile(`content/blurbs/${blurb.image}`)
+  if (!blurb._decorated) {
+    if (blurb.image) {
+      blurb.image = staticFile(`content/blurbs/${blurb.image}`)
+    }
+    blurb._decorated = true
   }
   return blurb
 }
@@ -34,6 +37,7 @@ export async function getBlurb(id) {
  *   _addedAt?: Date,
  *   _startedAt?: Date,
  *   _finishedAt?: Date,
+ *   _decorated?: boolean,
  * }} DecoratedItem<T>
  */
 
@@ -42,13 +46,16 @@ export async function getBlurb(id) {
  * @param {string} path
  */
 function decorateProject(item, path) {
-  if (item.image) {
-    item.image = staticFile(`content/${path}/${item.image}`)
-  }
-  for (const dateKey of /** @type {DateKey[]} */(['date', 'addedAt', 'startedAt', 'finishedAt'])) {
-    if (item[dateKey]) {
-      item[`_${dateKey}`] = new Date(/** @type {string} */(item[dateKey]))
+  if (!item._decorated) {
+    if (item.image) {
+      item.image = staticFile(`content/${path}/${item.image}`)
     }
+    for (const dateKey of /** @type {DateKey[]} */(['date', 'addedAt', 'startedAt', 'finishedAt'])) {
+      if (item[dateKey]) {
+        item[`_${dateKey}`] = new Date(/** @type {string} */(item[dateKey]))
+      }
+    }
+    item._decorated = true
   }
 
   return item
