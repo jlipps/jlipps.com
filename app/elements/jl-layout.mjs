@@ -18,7 +18,17 @@ export default function JLLayout({html, state}) {
       }
 
       .hero {
-        max-width: 26rem;
+        width: 20rem;
+      }
+
+      .hero img {
+        width: 100%;
+      }
+
+      @media only screen and (min-width:44em) {
+        .hero {
+          width: 24rem;
+        }
       }
     </style>
 
