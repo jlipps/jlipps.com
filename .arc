@@ -1,5 +1,5 @@
 @app
-enhance-app
+jldc
 
 @static
 prune true
