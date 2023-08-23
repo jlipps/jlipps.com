@@ -13,7 +13,7 @@ export default function aboutPage({html, state}) {
     href: staticFile('downloads/Jonathan-Lipps-CV.pdf'),
   }, {
     title: 'Headshot',
-    href: 'todo'
+    href: staticFile('downloads/jlipps-headshot.jpg'),
   }, {
     title: 'Blog',
     href: 'https://jlipps.com',

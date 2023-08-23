@@ -15,20 +15,23 @@ const mdyFormatter = new Intl.DateTimeFormat('en-US', {
  * @param {string} img
  */
 export function staticImg(img) {
-  return arc.static(`img/${img}`)
+  return arc.static(`/img/${img}`)
 }
 
 /**
  * @param {string} style
  */
 export function staticStyle(style) {
-  return arc.static(`styles/${style}`)
+  return arc.static(`/styles/${style}`)
 }
 
 /**
  * @param {string} file
  */
 export function staticFile(file) {
+  if (file[0] !== '/') {
+    file = `/${file}`
+  }
   return arc.static(file)
 }
 
