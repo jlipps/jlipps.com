@@ -12,7 +12,7 @@ export default function indexPage({html, state}) {
     ['Philosophy', '/philosophy'],
     ['Theology', '/theology'],
     ['Linguistics', '/linguistics'],
-    ['Photos', '/photos'],
+    ['All Projects', '/projects'],
   ]
 
   const aboutLinksHtml = aboutLinks.map(([title, href, openNew]) =>
@@ -32,10 +32,6 @@ export default function indexPage({html, state}) {
         fill: var(--mdgray);
       }
 
-      a:hover.link-btn {
-        text-decoration: none;
-        border: 2px solid var(--light);
-      }
     </style>
 
     <jl-layout hero="${intro.image}">

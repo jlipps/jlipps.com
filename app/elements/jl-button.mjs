@@ -9,6 +9,10 @@ export default function JLButton({html, state}) {
         color: var(--white);
         text-decoration: none;
       }
+      a:hover {
+        text-decoration: none;
+        border: 2px solid var(--light);
+      }
     </style>
     <a
       href="${href}"

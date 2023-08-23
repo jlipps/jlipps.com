@@ -3,7 +3,9 @@ export default function JLProject({html, state}) {
   const {context, attrs} = state
   /** @type {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project} */
   const project = context[attrs.contextkey]
-  const wrapWithLink = (/** @type {any} */wrapped) => project.link ? html`<a href="${project.link}" target="_blank">${wrapped}</a>`: wrapped
+  const wrapWithLink = (/** @type {any} */wrapped) => project.link ?
+    html`<a name="${project.id}" href="${project.link}" target="_blank">${wrapped}</a>` :
+    html`<a name="${project.id}"></a>${wrapped}`
   let titleHtml = wrapWithLink(project.title)
   const imgHtml = wrapWithLink(project.image ?
     html`

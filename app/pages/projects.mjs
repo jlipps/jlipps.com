@@ -13,7 +13,7 @@ export default function aboutPage({html, state}) {
     }).join('\n')
 
     return html`
-      <h2 class="year">${year}</h2>
+      <h2 class="year bg-navy radius5 pi-5">${year}</h2>
       ${projectsForYearHtml}
     `
   }).join('\n')
@@ -25,9 +25,9 @@ export default function aboutPage({html, state}) {
       }
     </style>
     <jl-layout hero="${blurb.image}">
-      <div class="blurb bg-navy radius5 pb-2 pi-2">
+      <!--<div class="blurb bg-navy radius5 pb-2 pi-2">
         ${blurb._html}
-      </div>
+      </div>-->
 
       <jl-mdcontent>
         ${projectsHtml}
