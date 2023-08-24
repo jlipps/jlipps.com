@@ -3,7 +3,7 @@ import { compareStartedFinished, prettifyProjectDates, compareDate } from '../sh
 
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
-export async function get(/*req*/) {
+export async function get(req) {
   const blurb = await getBlurb('technology')
   const highlightsBlurb = await getBlurb('tech-highlights')
   const speakingBlurb = await getBlurb('tech-speaking')
@@ -30,6 +30,7 @@ export async function get(/*req*/) {
       highlights,
       articles,
       talks,
+      urlPath: req.path,
     }
   }
 }
