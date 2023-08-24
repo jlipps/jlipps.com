@@ -2,7 +2,7 @@ import { getBlurb, getProjectsByType } from '../shared/content.mjs'
 import {compareDate, prettifyProjectDates} from '../shared/utils.mjs'
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
-export async function get(req) {
+export async function get(/*req*/) {
   const blurb = await getBlurb('music')
   const projectsBlurb = await getBlurb('music-projects')
   const projects = [
@@ -16,7 +16,6 @@ export async function get(req) {
       blurb,
       projectsBlurb,
       projects,
-      urlPath: req.path,
     }
   }
 }

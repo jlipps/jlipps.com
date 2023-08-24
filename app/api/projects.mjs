@@ -3,7 +3,7 @@ import { prettifyProjectDates, compareDate } from '../shared/utils.mjs'
 
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
-export async function get(req) {
+export async function get(/*req*/) {
   const blurb = await getBlurb('projects')
   const projects = (await getProjectsBy({}))
     .sort(compareDate)
@@ -31,7 +31,6 @@ export async function get(req) {
       title: 'All Projects',
       blurb,
       projectsSortedByYear,
-      urlPath: req.path,
     }
   }
 }

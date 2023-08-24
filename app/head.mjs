@@ -11,11 +11,11 @@ const CARD = staticImg('jl-card.jpg')
 
 /** @type {import('@enhance/types').EnhanceHeadFn} */
 export default function Head(state) {
-  const {store} = state
-  const {title, urlPath} = store
+  const {store, req} = state
+  const {title} = store
   const titleExtra = title ? `: ${title}` : ''
   const fullTitle = `Jonathan Lipps${titleExtra}`
-  const ogUrl = `https://jlipps.com${urlPath ?? '/'}`
+  const ogUrl = `https://jlipps.com${req.path}`
 
   const gtagHtml = isProd ? `
     <!-- Google tag (gtag.js) -->

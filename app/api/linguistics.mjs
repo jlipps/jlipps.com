@@ -3,7 +3,7 @@ import { prettifyProjectDates, compareDate } from '../shared/utils.mjs'
 
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
-export async function get(req) {
+export async function get(/*req*/) {
   const blurb = await getBlurb('linguistics')
   const oxfordBlurb = await getBlurb('linguistics-oxford')
   const worksBlurb = await getBlurb('linguistics-works')
@@ -18,7 +18,6 @@ export async function get(req) {
       oxfordBlurb,
       worksBlurb,
       works,
-      urlPath: req.path,
     }
   }
 }
