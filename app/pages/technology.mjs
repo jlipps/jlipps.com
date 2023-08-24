@@ -64,7 +64,7 @@ export default function aboutPage({html, state}) {
 
         <div>
           <a name="highlights"></a><h2>${highlightsBlurb.title}</h2>
-          <img class="sectionHero" src="${highlightsBlurb.image}" />
+          <jl-sectionhero class="sectionHero" src="${highlightsBlurb.image}"></jl-sectionhero>
           ${highlightsBlurb._html}
           <div class="clear"></div>
           ${highlightsHtml}
@@ -72,7 +72,7 @@ export default function aboutPage({html, state}) {
 
         <div>
           <a name="speaking"></a><h2>${speakingBlurb.title}</h2>
-          <img class="sectionHero" src="${speakingBlurb.image}" />
+          <jl-sectionhero class="sectionHero" src="${speakingBlurb.image}"></jl-sectionhero>
           ${speakingBlurb._html}
           <div class="clear"></div>
           ${talksHtml}
@@ -80,7 +80,7 @@ export default function aboutPage({html, state}) {
 
         <div>
           <a name="philosophy"></a><h2>${philosophyBlurb.title}</h2>
-          <img class="sectionHero" src="${philosophyBlurb.image}" />
+          <jl-sectionhero class="sectionHero" src="${philosophyBlurb.image}"></jl-sectionhero>
           ${philosophyBlurb._html}
           <div class="clear"></div>
           ${articlesHtml}

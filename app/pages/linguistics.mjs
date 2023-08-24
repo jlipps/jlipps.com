@@ -22,12 +22,12 @@ export default function aboutPage({html, state}) {
       <jl-mdcontent>
 
         <a name="oxford"></a><h2>${oxfordBlurb.title}</h2>
-        <img class="sectionHero" src="${oxfordBlurb.image}" />
+        <jl-sectionhero class="sectionHero" src="${oxfordBlurb.image}"></jl-sectionhero>
         ${oxfordBlurb._html}
         <div class="clear"></div>
 
         <a name="works"></a><h2>${worksBlurb.title}</h2>
-        <img class="sectionHero" src="${worksBlurb.image}" />
+        <jl-sectionhero class="sectionHero" src="${worksBlurb.image}"></jl-sectionhero>
         ${worksBlurb._html}
         <div class="clear"></div>
         ${worksHtml}

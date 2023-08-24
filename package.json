@@ -33,7 +33,9 @@
     }
   },
   "dependencies": {
+    "@enhance/arc-image-plugin": "^1.1.0",
     "@enhance/arc-plugin-enhance": "^6.2.1",
+    "@enhance/image": "^0.0.0-alpha.11",
     "@enhance/styles-cribsheet": "^0.0.9",
     "muaddib": "^0.0.6"
   }

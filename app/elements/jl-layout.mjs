@@ -71,7 +71,7 @@ export default function JLLayout({html, state}) {
         width: 100%;
       }
 
-      @media only screen and (min-width:44em) {
+      @media only screen and (min-width:36em) {
         .hero {
           width: 24rem;
         }
@@ -83,7 +83,12 @@ export default function JLLayout({html, state}) {
     </header>
     <main class="m-auto pbs2 pbe2 pi2 color-light font-sans">
       <div class="hero mi-auto pi2 mbe2">
-        <img src="${hero}" alt="hero" class="radius-100 border-navy border2">
+        <enhance-image
+           defaultwidth="350"
+           src="${hero}"
+           alt="Hero image for page"
+           class="circle">
+        </enhance-image>
       </div>
       <slot></slot>
     </main>

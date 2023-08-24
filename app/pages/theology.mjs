@@ -22,7 +22,7 @@ export default function aboutPage({html, state}) {
       <jl-mdcontent>
 
         <a name="background"></a><h2>${backgroundBlurb.title}</h2>
-        <img class="sectionHero" src="${backgroundBlurb.image}" />
+        <jl-sectionhero class="sectionHero" src="${backgroundBlurb.image}"></jl-sectionhero>
         ${backgroundBlurb._html}
         <div class="clear"></div>
 

@@ -27,23 +27,6 @@ a:hover {
   text-decoration: underline dotted;
 }
 
-.sectionHero {
-  border-color: var(--navy);
-  border-width: 2px;
-  border-radius: 100%;
-  max-width: 5.5rem;
-  display: block;
-  margin-block: var(--space--2);
-  float: right;
-  margin-inline: var(--space--2);
-}
-
-@media only screen and (min-width:44em) {
-  .sectionHero {
-    max-width: 7rem;
-  }
-}
-
 .color-light {
   color: var(--light);
 }
@@ -110,4 +93,9 @@ a:hover {
   border-radius: 5px;
   padding-block: var(--space--2);
   padding-inline: var(--space--2);
+}
+
+enhance-image.circle img {
+  border-radius: 100%;
+  border: 2px solid var(--navy);
 }

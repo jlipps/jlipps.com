@@ -15,14 +15,16 @@ const mdyFormatter = new Intl.DateTimeFormat('en-US', {
  * @param {string} img
  */
 export function staticImg(img) {
-  return arc.static(`/img/${img}`)
+  return `/_public/img/${img}`
+  //return arc.static(`/img/${img}`)
 }
 
 /**
  * @param {string} style
  */
 export function staticStyle(style) {
-  return arc.static(`/styles/${style}`)
+  return `/_public/styles/${style}`
+  //return arc.static(`/styles/${style}`)
 }
 
 /**
@@ -32,7 +34,8 @@ export function staticFile(file) {
   if (file[0] !== '/') {
     file = `/${file}`
   }
-  return arc.static(file)
+  return `/_public${file}`
+  //return arc.static(file)
 }
 
 /**

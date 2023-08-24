@@ -10,13 +10,17 @@ export default function JLProject({html, state}) {
   const imgHtml = wrapWithLink(project.image ?
     html`
       <style>
-        .projectImg {
+        enhance-image.projectImg img {
           border-radius: 5px;
           max-width: 3rem;
           margin-inline-end: var(--space--2);
         }
       </style>
-      <img class="projectImg" src="${project.image}" />
+      <enhance-image
+          class="projectImg"
+          defaultwidth="60"
+          src="${project.image}">
+      </enhance-image>
     ` :
     '')
 
@@ -70,7 +74,14 @@ export default function JLProject({html, state}) {
         }).join('\n')
       : ''
     const mediaIcons = `${vidLinkHtml}${audioLinkHtml}${slideLinkHtml}${articleLinkHtml}`
-    const imgHtml = project.image ? `<img class="projectHeroImg radius5" src="${project.image}" />` : ''
+    const imgHtml = project.image ? html`
+      <enhance-image
+         class="projectHeroImg"
+         defaultwidth="550"
+         variant1="(min-width: 36em) 250"
+         src="${project.image}">
+      </enhance-image>` :
+      ''
     const eventHtml = project.event ? html`<span class="tag">${project.event}</span>` : ''
     const publicationHtml = project.publication ? html`<span class="tag">${project.publication}</span>` : ''
     const locationHtml = project.location ? html`<span class="tag">${project.location}</span>` : ''
@@ -94,7 +105,8 @@ export default function JLProject({html, state}) {
         .tag.inline-tag {
           margin-inline-end: 0;
         }
-        .projectHeroImg {
+
+        enhance-image.projectHeroImg {
           width: 100%;
           flex: 0 0 100%;
           align-self: flex-start;
@@ -102,11 +114,12 @@ export default function JLProject({html, state}) {
           margin-block-start: var(--space--1);
         }
 
-        .projectText {
+        enhance-image.projectHeroImg img {
+          border-radius: 5px;
         }
 
-        @media only screen and (min-width:44em) {
-          .projectHeroImg {
+        @media only screen and (min-width:36em) {
+          enhance-image.projectHeroImg {
             width: calc(var(--hero-width) - var(--space--1));
             flex: 1 1 calc(var(--hero-width) - var(--space--1));
             margin-inline-end: var(--space--1);
