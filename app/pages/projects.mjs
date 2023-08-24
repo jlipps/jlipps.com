@@ -13,17 +13,12 @@ export default function aboutPage({html, state}) {
     }).join('\n')
 
     return html`
-      <h2 class="year bg-navy radius5 pi-5">${year}</h2>
+      <h2 class="h2strong">${year}</h2>
       ${projectsForYearHtml}
     `
   }).join('\n')
 
   return html`
-    <style>
-      .year {
-        border-bottom: 2px solid var(--white);
-      }
-    </style>
     <jl-layout hero="${blurb.image}">
       <!--<div class="blurb bg-navy radius5 pb-2 pi-2">
         ${blurb._html}

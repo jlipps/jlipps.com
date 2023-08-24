@@ -1,7 +1,7 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function indexPage({html, state}) {
-  const {store} = state
-  const {intro} = store
+  const {store, context} = state
+  const {intro, projects} = store
   const aboutLinks = [
     ['About Me', '/about', false],
     ['Blog', 'https://blog.jlipps.com', true],
@@ -26,6 +26,12 @@ export default function indexPage({html, state}) {
     `
   ).join('\n')
 
+  const projectsHtml = /** @type {Project[]} */(projects).map((p) => {
+    context[p.id] = p
+    return html`<jl-project contextkey="${p.id}"></jl-project>`
+  }).join('\n')
+
+
   return html`
     <style>
       jl-icon a:hover svg {
@@ -43,6 +49,10 @@ export default function indexPage({html, state}) {
         ${aboutLinksHtml}
         ${linksHtml}
       </div>
+      <h2 class="h2strong">Recent Projects</h2>
+      ${projectsHtml}
     </jl-layout>
   `
 }
+
+/** @typedef {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project>} Project */

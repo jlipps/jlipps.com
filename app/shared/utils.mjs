@@ -49,14 +49,16 @@ export function compareDate(a, b) {
     if (a._date) {
       // a is punctiliar and b is span
       if (b._finishedAt) {
-        return a._date < b._finishedAt ? - 1 : 1
+        return a._date < b._finishedAt ? -1 : 1
+      } else if (b._startedAt) {
+        return a._date < b._startedAt ? -1 : 1
       }
-      return -1
     } else if (b._date) {
       if (a._finishedAt) {
         return a._finishedAt < b._date ? -1 : 1
+      } else if (a._startedAt) {
+        return a._startedAt < b._date? -1 : 1
       }
-      return 1
     }
   }
   if (!a._startedAt || !b._startedAt) {

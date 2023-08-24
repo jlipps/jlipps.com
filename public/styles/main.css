@@ -103,3 +103,11 @@ a:hover {
   border-radius: 5px;
   display: inline-block;
 }
+
+.h2strong {
+  border-bottom: 2px solid var(--white);
+  background-color: var(--navy);
+  border-radius: 5px;
+  padding-block: var(--space--2);
+  padding-inline: var(--space--2);
+}
