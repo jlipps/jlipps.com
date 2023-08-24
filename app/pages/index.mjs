@@ -3,7 +3,7 @@ export default function indexPage({html, state}) {
   const {store, context} = state
   const {intro, projects} = store
   const aboutLinks = [
-    ['About Me', '/about', false],
+    ['About', '/about', false],
     ['Blog', 'https://blog.jlipps.com', true],
   ]
   const links = [
