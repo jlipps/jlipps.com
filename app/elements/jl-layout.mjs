@@ -78,7 +78,7 @@ export default function JLLayout({html, state}) {
       }
     </style>
 
-    <header class="pb0">
+    <header class="pbs0">
       <h2 class="m-auto font-title text3 italic text-center">${titleHtml}</h2>
     </header>
     <main class="m-auto pbs2 pbe2 pi2 color-light font-sans">
