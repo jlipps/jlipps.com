@@ -51,6 +51,9 @@ export default function indexPage({html, state}) {
       </div>
       <h2 class="h2strong">Recent Projects</h2>
       ${projectsHtml}
+      <div class="flex align-items-center">
+        <jl-button class="mi-auto mbs1" href="/projects">See all projects...</jl-button>
+      </div>
     </jl-layout>
   `
 }
