@@ -6,7 +6,9 @@ export async function get(/*req*/) {
   const bio = await getBlurb('about-bio')
   const delights = await getBlurb('about-delights')
   const profBio = await getBlurb('about-prof-bio')
-  return {json: {title: 'About', about, bio, delights, profBio}}
+  const whySite = await getBlurb('about-why')
+  const tech = await getBlurb('about-tech')
+  return {json: {title: 'About', about, bio, delights, profBio, whySite, tech}}
 }
 
 /** @typedef {import('../shared/utils.mjs').Button} Button */
