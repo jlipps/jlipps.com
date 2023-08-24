@@ -22,7 +22,7 @@ Have a look around! Build your own random parts of the web!
 
 ### Colophon
 
-- Hand-built with HTML, JS, and CSS
+- Hand-built with HTML, JS, and CSS (look Ma, no transpiling!)
 - Served using [Enhance](https://enhance.dev) (which also acts as a super lightweight "framework")
 - Deployed using [Architect](https://arc.codes)
 - Content exists as a bunch of metadata-rich markdown files, turned into a "database" with
