@@ -84,7 +84,8 @@ export default function JLLayout({html, state}) {
     <main class="m-auto pbs2 pbe2 pi2 color-light font-sans">
       <div class="hero mi-auto pi2 mbe2">
         <enhance-image
-           defaultwidth="350"
+           defaultwidth="300"
+           variant1="(min-width: 36em) 450"
            src="${hero}"
            alt="Hero image for page"
            class="circle">
