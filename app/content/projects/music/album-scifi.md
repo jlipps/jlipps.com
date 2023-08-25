@@ -7,7 +7,7 @@ link: https://jlipps.bandcamp.com/album/science-fiction
 links:
     Bandcamp: https://jlipps.bandcamp.com/album/science-fiction
 type: album
-date: '2008-01-16'
+date: '2009-01-16'
 ---
 
 This album is the result of a lot of experimentation with composing using electronic instruments
