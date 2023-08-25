@@ -1,7 +1,7 @@
 ---
 id: paper-enaselvai
 title: 'Enaselvai: A Sketch of a Constructed Language'
-image: linguistics/paper-enaselvai.jpg
+image: linguistics/paper-enaselvai.png
 type: article
 tags:
     - linguistics

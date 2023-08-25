@@ -2,7 +2,6 @@
 id: pod-herebedragons
 artist: Here be Dragons
 title: 'Facebook, Virtual Reality Church, and Embodiment: Technology in the Church in an Isolated World'
-image: theology/pod-herebedragons.png
 type: podepisode
 tags:
     - theology

@@ -85,6 +85,7 @@ export default function JLLayout({html, state}) {
       <div class="hero mi-auto pi2 mbe2">
         <enhance-image
            defaultwidth="300"
+           format="webp"
            variant1="(min-width: 36em) 450"
            src="${hero}"
            alt="Hero image for page"

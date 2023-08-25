@@ -2,7 +2,7 @@
 id: blog-aiconsequences
 title: "The consequences of AI for human personhood and creativity"
 type: article
-image: tech/blog-aiconsequences.jpg
+image: tech/blog-aiconsequences.png
 tags:
     - technology
     - philosophy

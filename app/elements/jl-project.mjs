@@ -18,6 +18,7 @@ export default function JLProject({html, state}) {
       </style>
       <enhance-image
           class="projectImg"
+          format="webp"
           defaultwidth="60"
           src="${project.image}">
       </enhance-image>
@@ -77,6 +78,7 @@ export default function JLProject({html, state}) {
     const imgHtml = project.image ? html`
       <enhance-image
          class="projectHeroImg"
+         format="webp"
          defaultwidth="550"
          variant1="(min-width: 36em) 250"
          src="${project.image}">

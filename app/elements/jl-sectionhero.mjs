@@ -27,6 +27,7 @@ export default function JLSectionHero({html, state}) {
 
     <enhance-image
         class="sectionHero"
+        format="webp"
         defaultwidth="100"
         variant1="(min-width: 36em) 150"
         src="${src}"

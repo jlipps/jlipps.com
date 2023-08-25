@@ -1,7 +1,7 @@
 ---
 id: philosophy-stanford
 title: Education at Stanford
-image: philosophy-stanford.jpg
+image: philosophy-stanford.webp
 ---
 
 I got my BA (2004) during some wonderful years as an undergraduate at the [Stanford Philosophy

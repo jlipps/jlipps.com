@@ -2,7 +2,7 @@
 id: album-suiteapoc
 title: Suite Apocalyptique
 artist: Jonathan Lipps
-image: music/album-suiteapoc.jpg
+image: music/album-suiteapoc.png
 type: album
 date: '2007-03-03'
 ---
