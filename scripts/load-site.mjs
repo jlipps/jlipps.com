@@ -4,12 +4,12 @@ import axios from 'axios'
 const BASE_URL = 'https://jlipps.com'
 const URLS_TO_LOAD = [
   '/',
-  '/about',
-  '/linguistics',
-  '/music',
-  '/philosophy',
   '/projects',
+  '/about',
   '/technology',
+  '/music',
+  '/linguistics',
+  '/philosophy',
   '/theology',
 ]
 
