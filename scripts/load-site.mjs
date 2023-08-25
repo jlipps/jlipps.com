@@ -18,9 +18,28 @@ async function loadUrls() {
     const fullUrl = `${BASE_URL}${url}`
     const start = Date.now()
     console.log(`Loading ${fullUrl}`)
-    await axios.get(fullUrl)
+    const {data} = await axios.get(fullUrl, {responseType: 'text', headers: {Accept: 'text/html'}})
     const elapsed = Date.now() - start
-    console.log(`---> loaded in ${elapsed / 1000}s`)
+    console.log(`\t--> loaded in ${elapsed / 1000}s`)
+    const matches = `${data}`.matchAll(/srcset="([^"]+)"/g)
+    if (matches) {
+      for (const match of matches) {
+        const imgUrl = `${BASE_URL}${match[1]}`
+        const loadImage = async () => {
+          const start = Date.now()
+          console.log(`\tLoading ${imgUrl}`)
+          await axios.get(imgUrl, {responseType: 'blob', headers: {Accept: 'any'}})
+          const elapsed = Date.now() - start
+          console.log(`\t\t--> loaded in ${elapsed / 1000}s`)
+        }
+        try {
+          await loadImage()
+        } catch (err) {
+          console.log(`\t\t--> got error, will retry once`)
+          await loadImage()
+        }
+      }
+    }
   }
 }
 
