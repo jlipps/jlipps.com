@@ -4,7 +4,9 @@
   "scripts": {
     "start": "npx enhance dev",
     "lint": "eslint ./app/**/*.mjs --fix",
-    "enhance": "enhance"
+    "enhance": "enhance",
+    "deploy": "arc deploy --production && npm run load-site",
+    "load-site": "node ./scripts/load-site.mjs"
   },
   "devDependencies": {
     "@architect/architect": "^10.14.1",
@@ -13,6 +15,7 @@
     "@enhance/types": "^0.6.1",
     "@types/node": "^20.4.6",
     "ajv": "^8.12.0",
+    "axios": "^1.4.0",
     "eslint": "^8.30.0"
   },
   "eslintConfig": {
