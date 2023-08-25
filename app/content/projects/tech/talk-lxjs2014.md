@@ -3,6 +3,9 @@ id: talk-lxjs2014
 title: 'Internet of Nothings: Technology and Our Relationship to the Things in Our World'
 image: tech/talk-lxjs2014.jpg
 type: talk
+tags:
+    - technology
+    - philosophy
 event: LXJS
 location: Lisbon, Portugal
 link: http://www.jonathanlipps.com/blog/2014/06/internet-of-nothings/

@@ -3,6 +3,8 @@ id: album-scifi
 title: Science+Fiction
 artist: Jonathan Lipps
 image: music/album-scifi.jpg
+tags:
+    - music
 link: https://jlipps.bandcamp.com/album/science-fiction
 links:
     Bandcamp: https://jlipps.bandcamp.com/album/science-fiction

@@ -3,6 +3,10 @@ id: album-songsofhope
 title: Songs of Hope
 artist: Tumaini Children's Home
 image: music/album-songsofhope.jpg
+tags:
+    - volunteering
+    - music
+    - swahili
 type: album
 date: '2008-02-29'
 ---

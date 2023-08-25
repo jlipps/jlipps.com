@@ -5,6 +5,7 @@ type: article
 tags:
     - technology
     - linguistics
+    - swahili
 link: https://www.academia.edu/13640271/XSMA_A_Finite_state_Morphological_Analyzer_for_Swahili
 links:
     article: ''

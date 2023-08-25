@@ -5,6 +5,7 @@ type: article
 tags:
     - technology
     - philosophy
+    - open source
 publication: SPT2015
 link: https://www.academia.edu/13640309/A_Blueprint_for_Irony_Open_Source_Software_and_the_Device_Paradigm
 links:

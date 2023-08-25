@@ -2,6 +2,8 @@
 id: talk-appium2webinar2023
 title: 'Appium 2 is (Finally) Here!'
 type: talk
+tags:
+    - appium
 event: HeadSpin Webinar
 location: Online
 link: https://www.youtube.com/watch?v=GpsI-O0sRYg

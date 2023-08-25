@@ -4,6 +4,9 @@ title: Present-Future
 artist: Splendour Hyaline
 image: music/album-presentfuture.jpg
 type: album
+tags:
+    - music
+    - Splendour Hyaline
 link: https://splendourhyaline.bandcamp.com/album/present-future
 links:
     Bandcamp: https://splendourhyaline.bandcamp.com/album/present-future

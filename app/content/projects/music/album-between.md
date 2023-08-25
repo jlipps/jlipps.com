@@ -3,6 +3,9 @@ id: album-between
 title: Between
 artist: Splendour Hyaline
 image: music/album-between.jpg
+tags:
+    - music
+    - Splendour Hyaline
 type: album
 date: '2003-01-07'
 ---

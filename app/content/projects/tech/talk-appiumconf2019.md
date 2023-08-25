@@ -3,6 +3,8 @@ id: talk-appiumconf2019
 title: 'Appium: the Next Generation'
 image: tech/talk-appiumconf2019.png
 type: talk
+tags:
+    - appium
 event: AppiumConf
 location: Bengaluru, India
 link: https://www.youtube.com/watch?v=IohMOJh8egk

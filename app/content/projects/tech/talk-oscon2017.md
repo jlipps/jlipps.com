@@ -3,6 +3,8 @@ id: talk-oscon2017
 title: 'Farm-raised versus wild: Sustainability in corporate open source'
 image: tech/talk-oscon2017.png
 type: talk
+tags:
+    - open source
 event: O'Reilly OSCon
 location: Austin, TX
 link: https://www.oreilly.com/library/view/oscon-2017/9781491976227/video306711.html

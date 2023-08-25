@@ -3,6 +3,8 @@ id: talk-appiumconf2021
 title: 'Appium 2.0: State of the Union'
 image: tech/talk-appiumconf2021.png
 type: talk
+tags:
+    - appium
 event: AppiumConf
 location: Online
 link: https://www.youtube.com/watch?v=eXUG4as4Zy4

@@ -5,6 +5,7 @@ image: linguistics/paper-enaselvai.png
 type: article
 tags:
     - linguistics
+    - conlangs
 link: http://jonathan-lipps.s3.amazonaws.com/writing/jlipps-conlangs-enaselvai.pdf
 links:
     article: ''

@@ -3,6 +3,8 @@ id: talk-lxjs2013
 title: 'Appium: Mobile Automation Made Awesome'
 type: talk
 event: LXJS
+tags:
+    - appium
 link: https://www.youtube.com/watch?v=zsbNVkayYRQ
 links:
     video: ''

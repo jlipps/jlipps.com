@@ -2,6 +2,8 @@
 id: job-appiumpro
 image: tech/job-appiumpro.png
 title: Appium Pro
+tags:
+    - entrepreneurship
 type: job
 link: https://appiumpro.com
 role: Founder and Author

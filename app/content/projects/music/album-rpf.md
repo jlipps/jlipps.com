@@ -4,6 +4,9 @@ title: 'Regarding Present Fears'
 artist: Splendour Hyaline
 image: music/album-rpf.jpg
 type: album
+tags:
+    - music
+    - Splendour Hyaline
 link: https://www.youtube.com/watch?v=nMFs3UW4rnI&list=OLAK5uy_lhhl6Jq79kaP8tGBUPrENC0Dgqg3i9Cb4
 links:
     Spotify: https://play.spotify.com/album/5JYcPq7iecKnV4SZnHXZEk

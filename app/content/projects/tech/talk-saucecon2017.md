@@ -3,6 +3,9 @@ id: talk-saucecon2017
 title: 'The Philosophy and Future of Automation'
 image: tech/talk-saucecon2017.png
 type: talk
+tags:
+    - technology
+    - philosophy
 event: SauceCon
 location: San Francisco, CA
 link: https://www.youtube.com/watch?v=dWxyiYojSEc&list=PL67l1VPxOnT4ESvddNTyGGO5R3stfF77k&index=3

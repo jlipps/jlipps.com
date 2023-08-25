@@ -3,6 +3,8 @@ id: job-comendi
 image: tech/job-comendi.png
 title: Comendi
 type: job
+tags:
+    - entrepreneurship
 link: https://comendi.com
 role: Co-founder and CTO
 addedAt: '2011-01-31'

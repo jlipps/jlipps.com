@@ -5,6 +5,9 @@ artist: Splendour Hyaline
 image: music/album-hope.jpg
 type: album
 link: https://www.youtube.com/watch?v=zUtskAUj_T4&list=OLAK5uy_mHcAgM9Gy__D_MjnadzxmP7b3XXIDwzw0
+tags:
+    - music
+    - Splendour Hyaline
 links:
     Spotify: https://open.spotify.com/album/0LTdj0gQjRe1s464Xs38O9
     YouTube: https://www.youtube.com/watch?v=zUtskAUj_T4&list=OLAK5uy_mHcAgM9Gy__D_MjnadzxmP7b3XXIDwzw0

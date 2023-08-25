@@ -4,6 +4,7 @@ title: 'A lexical-functional analysis of Swahili relative clauses'
 type: article
 tags:
     - linguistics
+    - swahili
 link: http://ora.ox.ac.uk/objects/uuid:1df03c97-7889-46e2-b316-546bed53bc44
 links:
     article: http://ora.ox.ac.uk/objects/uuid%3A1df03c97-7889-46e2-b316-546bed53bc44/datastreams/THESIS01

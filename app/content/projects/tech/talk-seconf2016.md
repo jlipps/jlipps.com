@@ -2,6 +2,8 @@
 id: talk-seconf2016
 title: 'StarDriver Enterprise: App to the Future'
 image: tech/talk-seconf2016.jpg
+tags:
+    - appium
 type: talk
 event: SeleniumConf
 location: London, UK

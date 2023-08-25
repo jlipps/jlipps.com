@@ -3,6 +3,9 @@ id: talk-sopod
 title: 'What is technology? Do we even know?'
 type: talk
 location: Online
+tags:
+    - technology
+    - philosophy
 event: StackOverflow Podcast
 link: https://stackoverflow.blog/2017/09/25/podcast-116-technology-even-know/
 links:

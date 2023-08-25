@@ -3,6 +3,8 @@ id: job-cloudgrey
 image: tech/job-cloudgrey.png
 title: Cloud Grey
 type: job
+tags:
+    - entrepreneurship
 link: https://cloudgrey.io
 role: Founding Principal
 addedAt: '2018-01-01'

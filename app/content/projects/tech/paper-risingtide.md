@@ -5,6 +5,7 @@ type: article
 tags:
     - technology
     - philosophy
+    - open source
 publication: First Monday
 link: https://firstmonday.org/ojs/index.php/fm/article/view/9297
 links:
