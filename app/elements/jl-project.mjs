@@ -39,7 +39,7 @@ export default function JLProject({html, state}) {
     `
   }
 
-  if (['talk', 'article', 'musicvideo', 'song', 'album', 'podepisode'].includes(project.type)) {
+  if (['talk', 'article', 'musicvideo', 'song', 'album', 'podepisode', 'video'].includes(project.type)) {
     if (project.artist) {
       titleHtml = `${titleHtml} <span class="color-muted">by ${project.artist}</span>`
     }
