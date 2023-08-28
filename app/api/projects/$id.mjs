@@ -7,6 +7,7 @@ export async function get(req) {
   return {
     json: {
       title: project.title ?? 'Project',
+      titleHref: project.link,
       project,
     }
   }

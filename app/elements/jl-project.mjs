@@ -7,18 +7,85 @@ export default function JLProject({html, state}) {
   const wrapWithLink = (/** @type {any} */wrapped) => project.link ?
     html`<a name="${project.id}" href="${project.link}" target="_blank">${wrapped}</a>` :
     html`<a name="${project.id}"></a>${wrapped}`
-  let titleHtml = hidetitle ? '' : `<h3>${wrapWithLink(project.title)}</h3>`
+  const permalink = html`<span class="permalink"><jl-icon href="/projects/${project.id}" name="link"></jl-icon></span>`
+  let titleHtml = hidetitle ? '' : `<h3>${wrapWithLink(project.title)} ${permalink}</h3>`
+
+  const style = html`
+    <style>
+      :host {
+        --hero-width: 28%;
+      }
+
+      .job enhance-image.projectImg img {
+        border-radius: 5px;
+        max-width: 3rem;
+        margin-inline-end: var(--space--2);
+      }
+
+      .permalink jl-icon svg {
+        height: 1rem;
+        width: 1rem;
+        margin-inline-start: 0.3rem;
+      }
+
+      jl-icon a:hover svg {
+        fill: var(--medblue);
+      }
+
+      jl-icon svg {
+        fill: var(--lightblue);
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-inline-end: 0.5rem;
+      }
+      .tag {
+        margin-inline-end: 0.5rem;
+        margin-block-end: 0.25rem;
+      }
+      .tag.inline-tag {
+        margin-inline-end: 0;
+      }
+
+      .tag jl-icon svg {
+        fill: var(--white);
+        height: 0.75rem;
+        width: 0.75rem;
+        margin-inline-end: 0;
+        position: relative;
+        top: 0.1rem;
+      }
+
+      .projectHeroImg {
+        width: 100%;
+        flex: 0 0 100%;
+        align-self: flex-start;
+        margin-inline: auto;
+        margin-block-start: var(--space--1);
+      }
+
+      .projectHeroImg img {
+        border-radius: 5px;
+      }
+
+      @media only screen and (min-width:36em) {
+        .projectHeroImg {
+          width: calc(var(--hero-width) - var(--space--1));
+          flex: 1 1 calc(var(--hero-width) - var(--space--1));
+          margin-inline-end: var(--space--1);
+          margin-block-start: calc(var(--space--1) + 0.25rem);
+        }
+        .projectText {
+          flex: 1 1 calc(100% - var(--hero-width));
+        }
+      }
+    </style>
+  `
+
 
   if (project.type === 'job') {
     const imgHtml = wrapWithLink(project.image ?
       html`
-        <style>
-          enhance-image.projectImg img {
-            border-radius: 5px;
-            max-width: 3rem;
-            margin-inline-end: var(--space--2);
-          }
-        </style>
+        ${style}
         <enhance-image
             class="projectImg"
             format="webp"
@@ -30,7 +97,7 @@ export default function JLProject({html, state}) {
 
     return html`
       ${titleHtml}
-      <div class="flex align-items-center">
+      <div class="job flex align-items-center">
         ${imgHtml}
         <div>
           <div class="text-1"><strong>${project.role ?? ''}</strong></div>
@@ -94,61 +161,8 @@ export default function JLProject({html, state}) {
     const locationHtml = project.location ? html`<span class="tag">${project.location}</span>` : ''
 
     return html`
-      <style>
-        :host {
-          --hero-width: 28%;
-        }
-
-        jl-icon svg {
-          fill: var(--lightblue);
-          height: 1.5rem;
-          width: 1.5rem;
-          margin-inline-end: 0.5rem;
-        }
-        .tag {
-          margin-inline-end: 0.5rem;
-          margin-block-end: 0.25rem;
-        }
-        .tag.inline-tag {
-          margin-inline-end: 0;
-        }
-
-        .tag jl-icon svg {
-          fill: var(--white);
-          height: 0.75rem;
-          width: 0.75rem;
-          margin-inline-end: 0;
-          position: relative;
-          top: 0.1rem;
-        }
-
-        .projectHeroImg {
-          width: 100%;
-          flex: 0 0 100%;
-          align-self: flex-start;
-          margin-inline: auto;
-          margin-block-start: var(--space--1);
-        }
-
-        .projectHeroImg img {
-          border-radius: 5px;
-        }
-
-        @media only screen and (min-width:36em) {
-          .projectHeroImg {
-            width: calc(var(--hero-width) - var(--space--1));
-            flex: 1 1 calc(var(--hero-width) - var(--space--1));
-            margin-inline-end: var(--space--1);
-            margin-block-start: calc(var(--space--1) + 0.25rem);
-          }
-          .projectText {
-            flex: 1 1 calc(100% - var(--hero-width));
-          }
-        }
-      </style>
-
+      ${style}
       ${titleHtml}
-
       <div class="text-1 flex align-items-center flex-wrap">
         ${mediaIcons}
         ${artistHtml}

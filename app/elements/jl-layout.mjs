@@ -1,8 +1,9 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function JLLayout({html, state}) {
   const {attrs, store} = state
-  const {title, linkTitle} = store
-  const titleExtra = title ? `: ${title}` : ''
+  const {title, linkTitle, titleHref} = store
+  const extraLink = titleHref ? `<a href="${titleHref}" target="_blank">${title}</a>` : title
+  const titleExtra = title ? `: ${extraLink}` : ''
   const {hero} = attrs
   const titleHtml = linkTitle === false ?
     html`Jonathan Lipps${titleExtra}` :
@@ -93,7 +94,7 @@ export default function JLLayout({html, state}) {
       }
     </style>
 
-    <header class="pbs0">
+    <header class="pbs0 pi0">
       <h2 class="m-auto font-title text3 italic text-center">${titleHtml}</h2>
     </header>
     <main class="m-auto pbs2 pbe2 pi2 color-light font-sans">
