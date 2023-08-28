@@ -5,9 +5,9 @@ artist: Tumaini Children's Home
 image: music/album-songsofhope.jpg
 link: https://open.spotify.com/album/6cQiBtR5lQ7Evw3R0rtmu1
 links:
-    - Spotify: https://open.spotify.com/album/6cQiBtR5lQ7Evw3R0rtmu1
-    - Apple Music: https://music.apple.com/us/album/songs-of-hope-ep/1704390326
-    - YouTube: https://www.youtube.com/watch?v=eUAZwlMeyL4&list=OLAK5uy_n4wBE-I_pc5Ru0C3g-vSwjpR8Wqy4pK3Y
+    Spotify: https://open.spotify.com/album/6cQiBtR5lQ7Evw3R0rtmu1
+    Apple Music: https://music.apple.com/us/album/songs-of-hope-ep/1704390326
+    YouTube: https://www.youtube.com/watch?v=eUAZwlMeyL4&list=OLAK5uy_n4wBE-I_pc5Ru0C3g-vSwjpR8Wqy4pK3Y
 tags:
     - volunteering
     - music
