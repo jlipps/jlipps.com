@@ -1,7 +1,8 @@
 import { pathToFileURL } from 'url'
 import axios from 'axios'
 
-const BASE_URL = 'https://jlipps.com'
+const isLocal = process.argv.includes('--local')
+const BASE_URL = isLocal ? 'http://localhost:3333' : 'https://jlipps.com'
 const URLS_TO_LOAD = [
   '/',
   '/projects',

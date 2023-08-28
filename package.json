@@ -6,7 +6,8 @@
     "lint": "eslint ./app/**/*.mjs --fix",
     "enhance": "enhance",
     "deploy": "arc deploy --production && npm run load-site",
-    "load-site": "node ./scripts/load-site.mjs"
+    "load-site": "node ./scripts/load-site.mjs",
+    "load-site:local": "node ./scripts/load-site.mjs --local"
   },
   "devDependencies": {
     "@architect/architect": "^10.14.1",
