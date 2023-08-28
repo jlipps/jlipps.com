@@ -1,31 +1,32 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function JLProject({html, state}) {
   const {context, attrs} = state
-  /** @type {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project} */
+  /** @type {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project>} */
   const project = context[attrs.contextkey]
   const wrapWithLink = (/** @type {any} */wrapped) => project.link ?
     html`<a name="${project.id}" href="${project.link}" target="_blank">${wrapped}</a>` :
     html`<a name="${project.id}"></a>${wrapped}`
   let titleHtml = wrapWithLink(project.title)
-  const imgHtml = wrapWithLink(project.image ?
-    html`
-      <style>
-        enhance-image.projectImg img {
-          border-radius: 5px;
-          max-width: 3rem;
-          margin-inline-end: var(--space--2);
-        }
-      </style>
-      <enhance-image
-          class="projectImg"
-          format="webp"
-          defaultwidth="60"
-          src="${project.image}">
-      </enhance-image>
-    ` :
-    '')
 
   if (project.type === 'job') {
+    const imgHtml = wrapWithLink(project.image ?
+      html`
+        <style>
+          enhance-image.projectImg img {
+            border-radius: 5px;
+            max-width: 3rem;
+            margin-inline-end: var(--space--2);
+          }
+        </style>
+        <enhance-image
+            class="projectImg"
+            format="webp"
+            defaultwidth="60"
+            src="${project.image}">
+        </enhance-image>
+      ` :
+      '')
+
     return html`
       <h3>${titleHtml}</h3>
       <div class="flex align-items-center">
@@ -75,14 +76,19 @@ export default function JLProject({html, state}) {
         }).join('\n')
       : ''
     const mediaIcons = `${vidLinkHtml}${audioLinkHtml}${slideLinkHtml}${articleLinkHtml}`
-    const imgHtml = project.image ? html`
-      <enhance-image
-         class="projectHeroImg"
-         format="webp"
-         defaultwidth="550"
-         variant1="(min-width: 36em) 250"
-         src="${project.image}">
-      </enhance-image>` :
+    const imgLinkStart = project.link ? `<a href="${project.link}" target="_blank" class="projectHeroImg">` : ''
+    const imgLinkEnd  = project.link ? `</a>` : ''
+    const imgHtml = project.image ?
+      html`
+        ${imgLinkStart}
+        <enhance-image
+           class="${project.link ? '' : 'projectHeroImg'}"
+           format="webp"
+           defaultwidth="550"
+           variant1="(min-width: 36em) 250"
+           src="${project.image}">
+        </enhance-image>
+        ${imgLinkEnd}` :
       ''
     const eventHtml = project.event ? html`<span class="tag">${project.event}</span>` : ''
     const publicationHtml = project.publication ? html`<span class="tag">${project.publication}</span>` : ''
@@ -108,7 +114,7 @@ export default function JLProject({html, state}) {
           margin-inline-end: 0;
         }
 
-        enhance-image.projectHeroImg {
+        .projectHeroImg {
           width: 100%;
           flex: 0 0 100%;
           align-self: flex-start;
@@ -116,12 +122,12 @@ export default function JLProject({html, state}) {
           margin-block-start: var(--space--1);
         }
 
-        enhance-image.projectHeroImg img {
+        .projectHeroImg img {
           border-radius: 5px;
         }
 
         @media only screen and (min-width:36em) {
-          enhance-image.projectHeroImg {
+          .projectHeroImg {
             width: calc(var(--hero-width) - var(--space--1));
             flex: 1 1 calc(var(--hero-width) - var(--space--1));
             margin-inline-end: var(--space--1);
