@@ -1,12 +1,13 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
 export default function JLProject({html, state}) {
   const {context, attrs} = state
+  const {contextkey, hidetitle} = attrs
   /** @type {import('muaddib').ParsedObject<import('../shared/schema.mjs').Project>} */
-  const project = context[attrs.contextkey]
+  const project = context[contextkey]
   const wrapWithLink = (/** @type {any} */wrapped) => project.link ?
     html`<a name="${project.id}" href="${project.link}" target="_blank">${wrapped}</a>` :
     html`<a name="${project.id}"></a>${wrapped}`
-  let titleHtml = wrapWithLink(project.title)
+  let titleHtml = hidetitle ? '' : `<h3>${wrapWithLink(project.title)}</h3>`
 
   if (project.type === 'job') {
     const imgHtml = wrapWithLink(project.image ?
@@ -28,7 +29,7 @@ export default function JLProject({html, state}) {
       '')
 
     return html`
-      <h3>${titleHtml}</h3>
+      ${titleHtml}
       <div class="flex align-items-center">
         ${imgHtml}
         <div>
@@ -41,9 +42,6 @@ export default function JLProject({html, state}) {
   }
 
   if (['talk', 'article', 'musicvideo', 'song', 'album', 'podepisode', 'video'].includes(project.type)) {
-    if (project.artist) {
-      titleHtml = `${titleHtml} <span class="color-muted">by ${project.artist}</span>`
-    }
     const specialLinks = ['video', 'slides', 'audio', 'article', 'podepisode']
     let vidLink = project.links?.video
     const slideLink = project.links?.slides
@@ -90,6 +88,7 @@ export default function JLProject({html, state}) {
         </enhance-image>
         ${imgLinkEnd}` :
       ''
+    const artistHtml = project.artist ? html`<span class="tag"><jl-icon name="mic" alt="Mic icon"></jl-icon> ${project.artist}</span>` : ''
     const eventHtml = project.event ? html`<span class="tag">${project.event}</span>` : ''
     const publicationHtml = project.publication ? html`<span class="tag">${project.publication}</span>` : ''
     const locationHtml = project.location ? html`<span class="tag">${project.location}</span>` : ''
@@ -112,6 +111,15 @@ export default function JLProject({html, state}) {
         }
         .tag.inline-tag {
           margin-inline-end: 0;
+        }
+
+        .tag jl-icon svg {
+          fill: var(--white);
+          height: 0.75rem;
+          width: 0.75rem;
+          margin-inline-end: 0;
+          position: relative;
+          top: 0.1rem;
         }
 
         .projectHeroImg {
@@ -139,10 +147,11 @@ export default function JLProject({html, state}) {
         }
       </style>
 
-      <h4>${titleHtml}</h4>
+      ${titleHtml}
 
       <div class="text-1 flex align-items-center flex-wrap">
         ${mediaIcons}
+        ${artistHtml}
         ${eventHtml}
         ${publicationHtml}
         <span class="tag">${project._dateText}</span>

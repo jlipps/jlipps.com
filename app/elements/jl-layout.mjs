@@ -8,6 +8,21 @@ export default function JLLayout({html, state}) {
     html`Jonathan Lipps${titleExtra}` :
     html`<a href="/">Jonathan Lipps</a>${titleExtra}`
   const currentYear = new Date().getFullYear().toString()
+
+  const heroHtml = hero ?
+    html`
+      <div class="hero mi-auto pi2 mbe2">
+        <enhance-image
+           defaultwidth="300"
+           format="webp"
+           variant1="(min-width: 36em) 450"
+           src="${hero}"
+           alt="Hero image for page"
+           class="circle">
+        </enhance-image>
+      </div>
+    ` : ''
+
   return html`
     <style>
       jl-icon svg {
@@ -82,16 +97,7 @@ export default function JLLayout({html, state}) {
       <h2 class="m-auto font-title text3 italic text-center">${titleHtml}</h2>
     </header>
     <main class="m-auto pbs2 pbe2 pi2 color-light font-sans">
-      <div class="hero mi-auto pi2 mbe2">
-        <enhance-image
-           defaultwidth="300"
-           format="webp"
-           variant1="(min-width: 36em) 450"
-           src="${hero}"
-           alt="Hero image for page"
-           class="circle">
-        </enhance-image>
-      </div>
+      ${heroHtml}
       <slot></slot>
     </main>
     <footer class="m-auto pbe2 text-center color-light font-sans text-2">

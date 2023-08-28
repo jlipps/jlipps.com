@@ -1,5 +1,5 @@
 /** @type {import('@enhance/types').EnhanceElemFn} */
-export default function aboutPage({html, state}) {
+export default function allProjectsPage({html, state}) {
   const {store, context} = state
   const {
     blurb,
@@ -32,4 +32,4 @@ export default function aboutPage({html, state}) {
   `
 }
 
-/** @typedef {import('muaddib').ParsedObject<import('../shared/content.mjs').DecoratedItem<import('../shared/schema.mjs').Project>>} Project */
+/** @typedef {import('muaddib').ParsedObject<import('../../shared/content.mjs').DecoratedItem<import('../../shared/schema.mjs').Project>>} Project */

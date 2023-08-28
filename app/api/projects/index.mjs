@@ -1,5 +1,5 @@
-import { getBlurb, getProjectsBy } from '../shared/content.mjs'
-import { prettifyProjectDates, compareDate } from '../shared/utils.mjs'
+import { getBlurb, getProjectsBy } from '../../shared/content.mjs'
+import { prettifyProjectDates, compareDate } from '../../shared/utils.mjs'
 
 
 /** @type {import('@enhance/types').EnhanceApiFn} */
@@ -35,4 +35,4 @@ export async function get(/*req*/) {
   }
 }
 
-/** @typedef {import('../shared/content.mjs').DecoratedItem<import('../shared/schema.mjs').Project>} Project */
+/** @typedef {import('../../shared/content.mjs').DecoratedItem<import('../../shared/schema.mjs').Project>} Project */
