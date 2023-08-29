@@ -25,5 +25,5 @@ music to their songs, and recorded them. The resulting album was a really intere
 original East African folk melody (sung in Swahili or Kikuyu) and whatever influences I already
 had. All proceeds from the release of this album went/go to Tumaini!
 
-Vocal melodies and words were written by the Tumaini kids. Vocal harmonies and all other
-instruments, along with album art, by me.
+Vocal melodies and words were written by the Tumaini kids. I did vocal harmonies, instrumentation,
+and album art (aww yeah matatu!)
