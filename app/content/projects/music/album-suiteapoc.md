@@ -7,6 +7,9 @@ tags:
     - music
     - theology
 type: album
+link: https://jlipps.bandcamp.com/album/suite-apocalyptique
+links:
+    Bandcamp: https://jlipps.bandcamp.com/album/suite-apocalyptique
 date: '2007-03-03'
 ---
 
@@ -26,4 +29,4 @@ singing vocal lines in a stone chapel in the castle wall, my breath frosting in 
 night---unparalleled! Sadly I just had a set of SM-57s and a cheap USB-powered digital audio unit,
 so I couldn't do full justice to the physical and spiritual context. But the songs themselves,
 despite being super stripped-down arrangements of piano and vocals, remain powerful artifacts of
-that sabbatical for me. Downloads coming soon! Cover design by Chris Nyffeler.
+that sabbatical for me. Mixed/mastered by David Lipps. Cover design by Chris Nyffeler.
