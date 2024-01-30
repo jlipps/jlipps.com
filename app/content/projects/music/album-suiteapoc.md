@@ -9,8 +9,12 @@ tags:
 type: album
 link: https://jlipps.bandcamp.com/album/suite-apocalyptique
 links:
+    Spotify: https://open.spotify.com/album/5p460lUQimNsG7oBwJTyAA
+    Apple Music: https://music.apple.com/us/album/suite-apocalyptique/1727860003
+    Amazon: https://music.amazon.com/albums/B0CTDSFF3P
     Bandcamp: https://jlipps.bandcamp.com/album/suite-apocalyptique
-date: '2007-03-03'
+    YouTube: https://music.youtube.com/playlist?list=OLAK5uy_l2bUM7ai8M4uaIdFcM4W-S4PulRw8WecM
+date: '2007-03-02'
 ---
 
 I wrote this album while on sabbatical at [Schloss
