@@ -8,6 +8,7 @@ export default function JLSocials({html}) {
       <jl-icon name="linkedin" alt="My LinkedIn profile" href="https://linkedin.com/in/jlipps"></jl-icon>
       <jl-icon name="youtube" alt="My YouTube channel" href="https://www.youtube.com/@jonathanlipps"></jl-icon>
       <jl-icon name="facebook" alt="My Facebook profile" href="https://facebook.com/jlipps"></jl-icon>
+      <jl-icon name="tiktok" alt="My music-focused TikTok profile" href="https://www.tiktok.com/@jonathanlipps"></jl-icon>
     </div>
   `
 }
