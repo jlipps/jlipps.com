@@ -17,8 +17,9 @@ cultural and historical backgrounds of texts, not to mention appropriate linguis
 them. So many elements of what I believed about the Bible growing up have been revolutionized by
 exposure to current research in these areas.
 
-I'm currently enrolled (very much part-time) at [Regent College](https://regent-college.edu) in
-Vancouver, BC, pursuing a ThM in Interdisciplinary Studies. My area of focus is the theology of
+In 2024 I completed a ThM (master of theology) in Interdisciplinary Studies at [Regent
+College](https://regent-college.edu) in Vancouver, BC. My area of focus was the theology of
 technology, bringing together my lifelong interest and career in technology with considerations of
-the transcendent. Specifically, my research is on understanding modern technology and our use of it
-from the perspective of the Biblical themes of Creation, Imago Dei, and Fall.
+the transcendent. Specifically, my research was on understanding modern technology (and Generative
+AI in particular) and our use of it from philosophical perspectives as well as perspectives
+informed by the early chapters of Genesis.
