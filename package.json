@@ -10,14 +10,14 @@
     "load-site:local": "node ./scripts/load-site.mjs --local"
   },
   "devDependencies": {
-    "@architect/architect": "^10.14.1",
-    "@architect/sandbox": "^5.7.5-RC.0",
+    "@architect/architect": "^11.1.0",
+    "@architect/sandbox": "^6.0.5",
     "@enhance/cli": "latest",
-    "@enhance/types": "^0.6.1",
-    "@types/node": "^20.4.6",
+    "@enhance/types": "^0.7.0",
+    "@types/node": "^22.8.0",
     "ajv": "^8.12.0",
     "axios": "^1.4.0",
-    "eslint": "^8.30.0"
+    "eslint": "^9.13.0"
   },
   "eslintConfig": {
     "env": {
@@ -37,10 +37,11 @@
     }
   },
   "dependencies": {
-    "@enhance/arc-image-plugin": "^1.1.0",
-    "@enhance/arc-plugin-enhance": "^9.4.9-RC.0",
-    "@enhance/image": "^0.0.0-alpha.11",
-    "@enhance/styles-cribsheet": "^0.0.9",
+    "@enhance/arc-image-plugin": "^1.4.0",
+    "@enhance/arc-plugin-enhance": "^11.0.4",
+    "@enhance/arc-plugin-styles": "^5.0.6",
+    "@enhance/image": "^1.0.0",
+    "@enhance/styles-cribsheet": "^0.0.11",
     "muaddib": "^0.0.6"
   }
 }
